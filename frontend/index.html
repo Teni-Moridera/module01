@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модуль расчёта показателей</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Показатели успеваемости студентов</h1>
+        <p>Загрузите файл данных и получите статистику, отчёт и визуализации.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Загрузка данных</h2>
+        <div class="upload-row">
+          <input type="file" id="fileInput" accept=".json,.csv" />
+          <button id="uploadBtn">Загрузить</button>
+        </div>
+        <p class="status" id="status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Сводные показатели</h2>
+        <div id="stats" class="stats-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Рейтинг студентов</h2>
+        <table class="table" id="ratingTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Студент</th>
+              <th>Группа</th>
+              <th>Средний балл</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="panel">
+        <h2>Визуализация</h2>
+        <div class="charts-grid">
+          <div class="chart-card">
+            <canvas id="distributionChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <canvas id="groupChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <canvas id="subjectChart"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
